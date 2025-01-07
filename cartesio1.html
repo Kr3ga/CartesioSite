@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Un sito dedicato a René Descartes (Cartesio), filosofo e matematico rivoluzionario.">
+    <title>René Descartes - Cartesio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        /* Impostazione dello sfondo */
+       body {
+         background-image: url("SfondoSito.jpg");
+         font-family: "Georgia", serif;
+         line-height: 1,5;
+         margin: 0;
+         padding: 0;
+         overflow-x: hidden; /* Evita lo scroll orizzontale */
+         background-size: cover; /* L'immagine copre tutto lo spazio */
+         background-repeat: no-repeat; /* Evita la ripetizione */
+         background-position: center; /* Centra l'immagine */
+
+       }
+
+        /* Titolo principale stilizzato */
+        .main-title {
+            text-align: center;
+            font-family: "Playfair Display", serif; /* Font Playfair Display per i titoli */
+            font-size: 60px; /* Grandezza 60px */
+            color: #fff; /* Colore bianco per il titolo */
+            padding: 2rem;
+            margin-top: 0;
+        }
+
+        /* Scritta "Stile Delfino" sotto il titolo principale */
+        .style-description {
+            text-align: center; /* Centra il testo */
+            font-size: 15px; /* Grandezza del testo 15px */
+            color: #fff; /* Colore del testo bianco */
+            font-family: Arial, sans-serif; /* Carattere per la descrizione */
+            margin-top: -10px; /* Spazio negativo per avvicinare la scritta al titolo */
+        }
+
+        /* Stile per la retta sotto il titolo */
+        .title-divider {
+            width: 80%; /* Impostiamo una larghezza di 80% */
+            margin: 0 auto; /* Centra la retta */
+            border-top: 2px solid #fff; /* Linea bianca con spessore di 2px */
+            margin-bottom: 6rem; /* Abbassata la linea */
+        }
+
+        /* Pulsanti per navigazione tra le sezioni */
+        .navbar {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .navbar a {
+            display: inline-block;
+            background-color: #421F18; /* Colore marrone scuro */
+            color: #fff; /* Colore bianco per il testo */
+            padding: 10px 20px;
+            margin: 5px;
+            font-size: 18px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold; /* Testo in grassetto */
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar a:hover {
+            background-color: #3B1A13; /* Colore scuro al passaggio del mouse */
+        }
+
+        /* Linea separatrice sotto i pulsanti */
+        .navbar-divider {
+            width: 80%; /* Impostiamo una larghezza di 80% */
+            margin: 2rem auto; /* Centra la retta */
+            border-top: 2px solid #fff; /* Linea bianca con spessore di 2px */
+        }
+
+        /* Stile per ogni sezione */
+        section {
+            padding: 2rem;
+            margin: 2rem 0;
+            color: #fff; /* Colore del testo bianco */
+        }
+
+        section h2 {
+            font-family: "Playfair Display", serif; /* Font Playfair Display per i titoli */
+            font-size: 45px; /* Grandezza del titolo delle sezioni */
+            color: #fff; /* Colore bianco per i titoli delle sezioni */
+            margin-bottom: 1rem;
+            text-align: center; /* Centra i titoli delle sezioni */
+            font-weight: bold; /* Grassetto per i titoli */
+        }
+
+        section p {
+            font-family: Georgia, serif; /* Font Georgia per il testo normale */
+            font-size: 25px; /* Grandezza del testo sotto i titoli a 25px */
+            line-height: 1.5;
+            text-align: justify; /* Giustifica il testo */
+            font-weight: normal; /* Togli il grassetto dal testo normale */
+        }
+
+        /* Linea separatrice alla fine di ogni sezione */
+        section .section-divider {
+            width: 80%; /* Impostiamo una larghezza di 80% */
+            margin: 1rem auto; /* Centra la retta */
+            border-top: 2px solid #fff; /* Linea bianca con spessore di 2px */
+        }
+
+        /* Stile per l'immagine di Cartesio nella sezione 1 */
+        .cartesio-image {
+            width: 220px; /* Leggermente ingrandita rispetto a prima */
+            float: left; /* Posiziona l'immagine a sinistra */
+            margin-right: 20px; /* Spazio tra l'immagine e il testo */
+            margin-bottom: 20px; /* Spazio sotto l'immagine */
+        }
+
+        /* Aggiunta di un nuovo stile per l'immagine nella sezione 2, allineata a destra */
+        .evidenza-image {
+            width: 400px; /* Modificato a 400px */
+            float: right; /* Posiziona l'immagine a sinistra */
+            margin: 20px; /* Spazio tra l'immagine e il testo */
+            margin-bottom: 20px; /* Spazio sotto l'immagine */
+        }
+
+        /* Aggiunta di un nuovo stile per l'immagine nella sezione 3, allineata a sinistra */
+        .suddivisione-image {
+            width: 235px; /* Modificato a 235px */
+            float: left; /* Posiziona l'immagine a sinistra */
+            margin: 20px; /* Spazio tra l'immagine e il testo */
+            margin-bottom: 20px; /* Spazio sotto l'immagine */
+        }
+
+        /* Aggiunta di un nuovo stile per l'immagine nella sezione 4, allineata a destra */
+        .composizione-image {
+            width: 350px; /* Grandezza 350px */
+            float: right; /* Posiziona l'immagine a destra */
+            margin: 20px; /* Margini 20px */
+            margin-bottom: 20px; /* Spazio sotto l'immagine */
+        }
+
+        /* Aggiunta di un nuovo stile per l'immagine nella sezione 5, allineata a sinistra */
+        .enumerazione-image {
+            width: 350px; /* Grandezza 350px */
+            float: left; /* Allineata a sinistra */
+            margin: 20px; /* Margini 20px */
+            margin-bottom: 20px; /* Spazio sotto l'immagine */
+        }
+
+        .section-divider {
+            margin-top: 7rem; /* Linea separatoria abbassata ulteriormente */
+        }
+    </style>
+</head>
+<body>
+    <!-- Titolo principale della pagina -->
+    <h1 class="main-title">Metodo Cartesiano<br>Una Guida al Pensiero Chiaro e Rigoroso</h1>
+
+    <!-- Scritta "Stile Delfino" sotto il titolo principale -->
+    <p class="style-description">Stile Delfino</p>
+
+    <!-- Retta sotto il titolo -->
+    <div class="title-divider"></div>
+
+    <!-- Barra di navigazione con i pulsanti -->
+    <div class="navbar">
+        <a href="#metodo-cartesiano">Metodo Cartesiano</a>
+        <a href="#evidenzia">Evidenza (Chiarezza e Distinzione)</a>
+        <a href="#suddivisione">Suddivisione (Analisi)</a>
+        <a href="#composizione">Composizione (Sintesi)</a>
+        <a href="#enumerazione">Enumerazione (Revisione e Controllo)</a>
+        <a href="#perche-utilizzarlo">Perché il Metodo Cartesiano è Importante Oggi?</a>
+        <a href="#conclusione">Conclusione</a>
+    </div>
+
+    <!-- Linea separatoria sotto i pulsanti -->
+    <div class="navbar-divider"></div>
+
+    <!-- Sezione 1: Metodo Cartesiano -->
+    <section id="metodo-cartesiano">
+        <h2>Metodo Cartesiano: Una Guida al Pensiero Chiaro e Rigoroso</h2>
+        <!-- Immagine di Cartesio -->
+        <img src="https://th.bing.com/th/id/R.6def79571f9931a586e9e0c5eafee35b?rik=55olpkr8behTlg&riu=http%3a%2f%2fwww.studiarapido.it%2fwp-content%2fuploads%2f2015%2f02%2fcartesio.jpg&ehk=8NsAeJ04gawTMrNol%2f%2bNvXvVAxwIerJsaxujkNUehz4%3d&risl=&pid=ImgRaw&r=0" alt="Cartesio" class="cartesio-image" onclick="window.open('https://it.wikipedia.org/wiki/Cartesio', '_blank')">
+        <p>Il <strong>metodo cartesiano</strong> è un approccio che ci aiuta a pensare in modo <u>sistematico e preciso</u>, basandosi su quattro regole fondamentali. Cartesio, uno dei filosofi più influenti, lo ha sviluppato per affrontare <strong>dubbi e complessità</strong>, portando chiarezza e ordine nel nostro ragionamento. Oggi, possiamo applicarlo in molti ambiti, come la <em>scienza</em>, la <em>filosofia</em>, e persino nella <em>vita quotidiana</em>, quando affrontiamo problemi complessi. Vediamo come funziona.</p>
+        <!-- Inserimento dell'audio -->
+    <audio controls>
+        <source src="C:\Users\GIANGI\OneDrive\Documenti\GitHub\CartesioSite\Sito cartesio\Componenti sito\Metodo cartesiano sezione 1.m4a" type="audio/mp3">
+    </audio>
+        <!-- Linea separatoria più in basso -->
+        <div class="section-divider" style="margin-top: 5rem;"></div>
+    </section>
+
+    <!-- Sezione 2: Evidenza (Chiarezza e Distinzione) -->
+    <section id="evidenzia">
+        <h2>Evidenza (Chiarezza e Distinzione)</h2>
+        <!-- Immagine richiesta aggiunta -->
+        <img src="https://th.bing.com/th/id/OIP.fu5EyhOk6d2QrECjSN-0UAHaE5?rs=1&pid=ImgDetMain" alt="Evidenza" class="evidenza-image">
+        <p>La prima regola è quella <strong>dell'evidenza</strong>. Cartesio ci invita ad accettare come veri solo i concetti che sono assolutamente <u>chiari e distinti</u>, senza che vi sia alcun dubbio al riguardo. Tutto ciò che è incerto o ambiguo va messo da parte per il momento.<br>
+        Immagina di affrontare un problema. Prima di tutto, chiediti: <em>"Sono certo di quello che sto dicendo? Questo è chiaro per me?"</em> Se c'è qualcosa che non è del tutto evidente, dovresti fare uno sforzo per chiarirlo. In questo modo, eliminiamo errori derivanti da ipotesi non fondate e facciamo un passo in avanti verso la <strong>verità</strong>.</p>
+        <!-- Inserimento dell'audio -->
+      <audio controls>
+        <source src="C:\Users\GIANGI\OneDrive\Documenti\GitHub\CartesioSite\Sito cartesio\Componenti sito\Evidenza sezione 2.m4a" type="audio/mp3">
+      </audio>
+        <div class="section-divider" style="margin-top: 6rem;"></div>
+    </section>
+
+    <!-- Sezione 3: Suddivisione (Analisi) -->
+    <section id="suddivisione">
+        <h2>Suddivisione (Analisi)</h2>
+        <!-- Immagine richiesta aggiunta -->
+        <img src="https://i.pinimg.com/originals/19/d7/cf/19d7cf833f8837cdf552911e621fa74e.jpg" alt="Suddivisione" class="suddivisione-image">
+        <p>La seconda regola consiste nel <strong>suddividere un problema complesso in parti più semplici</strong>. Quando affrontiamo qualcosa di difficile, è <u>utile scomporlo in elementi più facili</u> da comprendere, in modo da analizzare ogni componente separatamente.<br>
+        Immagina di dover risolvere un problema matematico o anche una situazione della vita quotidiana. Se lo guardi <strong>nel suo insieme</strong>, potrebbe sembrarti troppo complicato. Ma se lo <strong>dividi in piccole parti</strong>, sarà molto più facile trovare soluzioni a ciascuna di esse. Così facendo, il <em>quadro complessivo</em> diventa più chiaro.</p>
+        <!-- Inserimento dell'audio -->
+      <audio controls>
+        <source src="C:\Users\GIANGI\OneDrive\Documenti\GitHub\CartesioSite\Sito cartesio\Componenti sito\Suddivisione sezione 3.m4a" type="audio/mp3">
+      </audio>
+        <div class="section-divider" style="margin-top: 7rem;"></div>
+    </section>
+
+    <!-- Sezione 4: Composizione (Sintesi) -->
+    <section id="composizione">
+        <h2>Composizione (Sintesi)</h2>
+        <!-- Immagine richiesta aggiunta -->
+        <img src="https://www.mediappalti.it/wp-content/uploads/2022/03/suddivisione-scaled.jpg" alt="Composizione" class="composizione-image">
+        <p>La terza regola ci invita a ricomporre i vari elementi dopo averli analizzati. Una volta che hai scomposto il problema in parti più piccole, il passo successivo è <strong>riunire queste parti</strong> per trovare una soluzione globale.<br>
+        Cartesio ci spinge a <strong>ricomporre</strong> il tutto in un'unità coerente. In altre parole, la sintesi è essenziale per concludere il ragionamento e trovare una soluzione al problema iniziale. Unisci ciò che hai trovato separatamente e vedrai il quadro completo con maggiore chiarezza.</p>
+        <!-- Inserimento dell'audio -->
+      <audio controls>
+        <source src="C:\Users\GIANGI\OneDrive\Documenti\GitHub\CartesioSite\Sito cartesio\Componenti sito\composizione sez. 4.m4a" type="audio/mp3">
+      </audio>
+        <div class="section-divider" style="margin-top: 6rem;"></div>
+    </section>
+
+    <!-- Sezione 5: Enumerazione (Revisione e Controllo) -->
+    <section id="enumerazione">
+        <h2>Enumerazione (Revisione e Controllo)</h2>
+        <!-- Immagine richiesta aggiunta -->
+        <img src="https://www.cours-gratuit.com/images/blog/4150/id-4150-03.jpg" alt="Enumerazione" class="enumerazione-image">
+        <p>L'ultima regola del metodo cartesiano è l'<strong>enumerazione</strong>. Dopo aver suddiviso, analizzato e ricomposto il problema, è fondamentale <u>verificare</u> se tutto è stato considerato e se la soluzione raggiunta è davvero corretta.<br>
+        La revisione è il passo finale che ci permette di <strong>confermare</strong> la validità del nostro pensiero, assicurandoci che non ci siano errori nei passaggi precedenti. È come fare una <em>revisione finale</em> di un lavoro scritto: è il controllo per essere sicuri che tutto sia stato fatto correttamente.</p>
+        <!-- Inserimento dell'audio -->
+      <audio controls>
+        <source src="C:\Users\GIANGI\OneDrive\Documenti\GitHub\CartesioSite\Sito cartesio\Componenti sito\Enumerazione sez.5.m4a" type="audio/mp3">
+      </audio>
+        <div class="section-divider" style="margin-top: 6rem;"></div>
+    </section>
+
+    <!-- Sezione 6: Perché il Metodo Cartesiano è Importante Oggi? -->
+    <section id="perche-utilizzarlo">
+        <h2>Perché il Metodo Cartesiano è Importante Oggi?</h2>
+        <p>Il metodo cartesiano non è solo una tecnica storica, ma è estremamente rilevante anche oggi. Viviamo in un mondo complesso, con informazioni in abbondanza e problemi sempre più difficili da risolvere. Applicare il <strong>metodo cartesiano</strong> ci aiuta a essere più chiari e precisi nel nostro pensiero, affrontando le sfide con una mente ben organizzata.</p>
+        <audio controls>
+          <source src="C:\Users\GIANGI\OneDrive\Documenti\GitHub\CartesioSite\Sito cartesio\Componenti sito\perché il met. è importante sez.6.m4a" type="audio/mp3">
+        </audio>
+        <div class="section-divider"></div>
+    </section>
+
+    <!-- Sezione 7: Conclusione -->
+    <section id="conclusione">
+        <h2>Conclusione</h2>
+        <p>Il metodo cartesiano, con le sue quattro regole fondamentali, offre un approccio potente e pratico per affrontare i problemi e arrivare a conclusioni chiare e ben fondate. Cartesio ci ha fornito gli strumenti per pensare in modo <strong>rigoroso e razionale</strong>, e oggi possiamo utilizzarli per orientare il nostro pensiero nella vita quotidiana, nel lavoro e nella scienza. Ricorda sempre le quattro regole: <strong>evidenza</strong>, <strong>analisi</strong>, <strong>sintesi</strong>, e <strong>revisione</strong>!</p>
+        <audio controls>
+          <source src="C:\Users\GIANGI\OneDrive\Documenti\GitHub\CartesioSite\Sito cartesio\Componenti sito\conclusione sez. 7.m4a" type="audio/mp3">
+        </audio>
+        <div class="section-divider"></div>
+    </section>
+
+</body>
+</html>
